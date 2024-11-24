@@ -27,16 +27,16 @@ public class AgendamentoService {
     @Autowired
     private HorarioRepository horarioRepository;
     
- // Método para listar todos os agendamentos por ID do cliente
+ 
     public List<AgendamentoDTO> listarAgendamentosPorCliente(Integer idCliente) {
         List<Agendamento> agendamentos = agendamentoRepository.findByClienteId(idCliente);
         return agendamentos.stream()
                 .map(agendamento -> new AgendamentoDTO(
                         agendamento.getIdagendamento(),
                         agendamento.getCliente().getId(),
-                        agendamento.getCliente().getNome(),      // Detalhe adicional do cliente
+                        agendamento.getCliente().getNome(),    
                         agendamento.getHorario().getId(),
-                        agendamento.getHorario().getDia(),      // Detalhe adicional do horário
+                        agendamento.getHorario().getDia(),      
                         agendamento.getServicos()
                 ))
                 .collect(Collectors.toList());
@@ -47,9 +47,9 @@ public class AgendamentoService {
     
     
     
-    // Método para criar um novo agendamento
+    
     public AgendamentoDTO criarAgendamento(AgendamentoDTO agendamentoDTO) {
-        // Buscar cliente e horário pelo ID
+    
         Optional<Cliente> clienteOpt = clienteRepository.findById(agendamentoDTO.getIdcliente());
         Optional<Horario> horarioOpt = horarioRepository.findById(agendamentoDTO.getIdhorario());
 

@@ -37,7 +37,7 @@ public class HorarioService {
     
     public void inserirHorariosParaDia(LocalDate dia) {
         for (int x = 800; x < 1850; x += 50) {
-            String horas = String.format("%04d", x); // Formata o horário (ex: 0800, 0850, ...)
+            String horas = String.format("%04d", x); // Formata o horário (ex: 0800, 0850)
             String a = horas.substring(0, 2);
             String b = horas.substring(2);
 
@@ -45,9 +45,9 @@ public class HorarioService {
                 b = "30"; // Ajuste de horário para 30 minutos
             }
 
-            String stringab = a + b; // Cria a string de horário com minutos ajustados
+            String stringab = a + b; 
 
-            // Inserir horário no banco de dados
+            
             horarioRepository.inserirHorariosDia(dia, stringab);
             System.out.println("Horário " + stringab + " inserido com sucesso para o dia " + dia);
         }
@@ -60,7 +60,7 @@ public class HorarioService {
             horario.setId(id);
             return horarioRepository.save(horario);
         }
-        return null; // Ou lançar uma exceção
+        return null;
     }
     @Transactional
     public Integer updateAtivoByDiaAndHoras(LocalDate dia, String horas) {

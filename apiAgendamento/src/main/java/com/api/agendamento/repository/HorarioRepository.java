@@ -16,7 +16,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface HorarioRepository extends JpaRepository<Horario, Integer>,HorarioRepositoryCustom {
-    // Você pode adicionar consultas personalizadas aqui, se necessário
 	@Query("SELECT h.horas FROM Horario h WHERE h.ativo = 0 AND h.dia = :dia")
     List<String> findHorasByDia(@Param("dia") LocalDate dia);
 	

@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ServicoRepository extends JpaRepository<Servico, Integer> {
-    // Você pode adicionar consultas personalizadas aqui, se necessário
+    
 }

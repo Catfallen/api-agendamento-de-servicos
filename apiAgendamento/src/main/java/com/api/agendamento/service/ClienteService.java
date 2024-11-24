@@ -32,7 +32,7 @@ public class ClienteService {
             cliente.setId(id);
             return clienteRepository.save(cliente);
         }
-        return null; // Ou lançar exceção
+        return null;
     }
 
     public boolean deleteCliente(Integer id) {

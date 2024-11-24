@@ -13,7 +13,7 @@ public class Horario {
     private Integer id;
 
     @Column(name = "dia")
-    private LocalDate dia;  // Usando LocalDate para armazenar a data
+    private LocalDate dia;  
 
     @Column(name = "horas")
     private String horas;

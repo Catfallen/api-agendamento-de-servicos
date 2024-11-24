@@ -31,7 +31,7 @@ public class ServicoService {
             servico.setId(id);
             return servicoRepository.save(servico);
         }
-        return null; // Ou lançar uma exceção
+        return null;
     }
 
     public boolean deleteServico(Integer id) {
